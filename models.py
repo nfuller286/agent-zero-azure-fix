@@ -247,7 +247,7 @@ def get_openai_azure_chat(
         api_key = get_api_key("openai_azure")
     if not azure_endpoint:
         azure_endpoint = dotenv.get_dotenv_value("OPENAI_AZURE_ENDPOINT")
-    return AzureChatOpenAI(deployment_name=deployment_name, api_key=api_key, azure_endpoint=azure_endpoint, **kwargs)  # type: ignore
+    return AzureChatOpenAI(model=deployment_name, api_key=api_key, azure_endpoint=azure_endpoint, **kwargs)  # type: ignore
 
 
 def get_openai_azure_embedding(
@@ -260,7 +260,7 @@ def get_openai_azure_embedding(
         api_key = get_api_key("openai_azure")
     if not azure_endpoint:
         azure_endpoint = dotenv.get_dotenv_value("OPENAI_AZURE_ENDPOINT")
-    return AzureOpenAIEmbeddings(deployment_name=deployment_name, api_key=api_key, azure_endpoint=azure_endpoint, **kwargs)  # type: ignore
+    return AzureOpenAIEmbeddings(model=deployment_name, api_key=api_key, azure_endpoint=azure_endpoint, **kwargs)  # type: ignore
 
 
 # Google models
